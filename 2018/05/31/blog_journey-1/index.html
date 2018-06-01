@@ -21,7 +21,7 @@
 <meta property="og:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了一个用IPFS托管博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://210.73.213.194:8080/ipfs/QmTcycNzSyERKj3NQckZBZaYUgkN4mJsjuRAzjYrmgdfqQ">
-<meta property="og:updated_time" content="2018-06-01T02:39:25.810Z">
+<meta property="og:updated_time" content="2018-06-01T06:48:30.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客之旅--搭架子">
 <meta name="twitter:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了一个用IPFS托管博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
@@ -219,7 +219,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate(简写hexo g) #生成静态网页</span><br></pre></td></tr></table></figure>
 <p>   开启本地server，默认可以通过localhost:4000来查看博客网页</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<ol start="3">
+<p>3.简单修改网页配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 可可冰的奇幻之旅</span><br><span class="line">subtitle:</span><br><span class="line">description:</span><br><span class="line">keywords:</span><br><span class="line">author: KekBin</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone:</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
 <li>将网页托管到GitHub上</li>
 </ol>
 <ul>
@@ -238,7 +239,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol start="4">
+<ol start="5">
 <li>绑定域名（非必需）</li>
 </ol>
 <ul>
@@ -260,7 +261,7 @@
 <blockquote>
 <p>在CNAME文件中添加域名放在本机 blog 根目录下的source文件夹中<br>否则每次重新deploy的时候，都会重新生成CNAME上传，这样需要重新在github上添加域名。</p>
 </blockquote>
-<p>5.每次修改网页的内容，重新发布</p>
+<p>6.每次修改网页的内容，重新发布</p>
 <p>一键生成并发布<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure></p>
 <p>或者先在本地生成，启动本地server，在localhost:4000验证之后再发布<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line"><span class="comment">#验证之后</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
 <p>至此，简单的架子搭好，架子搭好之后，还需要漂亮的外衣，这就需要借助theme了，下篇介绍。</p>
@@ -268,68 +269,59 @@
         </div>
         <footer class="article-footer">
             
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
 
 
 
-    <a data-url="http://yoursite.com/2018/05/31/blog_journey-1/" data-id="cjhvl3ltp000160271n722wrl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
 
         </footer>
     </div>
