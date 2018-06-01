@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="blog,hexo" />
     
-    <meta name="description" content="心血来潮最近做一个项目，利用去中心化存储技术IPFS实现dweb，将个人内容发布到IPFS上，从而生成个人主页。于是就有了一个想法，用IPFS作为网页资源器来实现一个博客系统。让用户自动生成博客一键发布。相比传统的利用github page托管，hexo来生成静态并发布网页的做法，用IPFS的长处在于，可以将大体积的媒体资源放在IPFS上，免受了github page空间的限制，且不用将大文件放在">
+    <meta name="description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了想用IPFS托管一个博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
 <meta name="keywords" content="blog,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客之旅启程--搭架子">
 <meta property="og:url" content="http://yoursite.com/2018/05/31/博客之旅启程(1)/index.html">
 <meta property="og:site_name" content="可可冰的奇幻之旅">
-<meta property="og:description" content="心血来潮最近做一个项目，利用去中心化存储技术IPFS实现dweb，将个人内容发布到IPFS上，从而生成个人主页。于是就有了一个想法，用IPFS作为网页资源器来实现一个博客系统。让用户自动生成博客一键发布。相比传统的利用github page托管，hexo来生成静态并发布网页的做法，用IPFS的长处在于，可以将大体积的媒体资源放在IPFS上，免受了github page空间的限制，且不用将大文件放在">
+<meta property="og:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了想用IPFS托管一个博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://210.73.213.194:8080/ipfs/QmTcycNzSyERKj3NQckZBZaYUgkN4mJsjuRAzjYrmgdfqQ">
-<meta property="og:updated_time" content="2018-05-31T12:24:24.408Z">
+<meta property="og:updated_time" content="2018-06-01T02:08:52.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客之旅启程--搭架子">
-<meta name="twitter:description" content="心血来潮最近做一个项目，利用去中心化存储技术IPFS实现dweb，将个人内容发布到IPFS上，从而生成个人主页。于是就有了一个想法，用IPFS作为网页资源器来实现一个博客系统。让用户自动生成博客一键发布。相比传统的利用github page托管，hexo来生成静态并发布网页的做法，用IPFS的长处在于，可以将大体积的媒体资源放在IPFS上，免受了github page空间的限制，且不用将大文件放在">
+<meta name="twitter:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了想用IPFS托管一个博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
 <meta name="twitter:image" content="http://210.73.213.194:8080/ipfs/QmTcycNzSyERKj3NQckZBZaYUgkN4mJsjuRAzjYrmgdfqQ">
     
 
@@ -168,16 +168,27 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="心血来潮"><a href="#心血来潮" class="headerlink" title="心血来潮"></a>心血来潮</h4><p>最近做一个项目，利用去中心化存储技术<a href="https://ipfs.io/" target="_blank" rel="noopener">IPFS</a>实现dweb，将个人内容发布到IPFS上，从而生成个人主页。<br>于是就有了一个想法，用IPFS作为网页资源器来实现一个博客系统。让用户自动生成博客一键发布。<br>相比传统的利用github page托管，hexo来生成静态并发布网页的做法，用IPFS的长处在于，可以将大体积的媒体资源放在IPFS上，免受了github page空间的限制，且不用将大文件放在七牛或百度云这种第三方的云盘上。</p>
+            <h4 id="心血来潮"><a href="#心血来潮" class="headerlink" title="心血来潮"></a>心血来潮</h4><p>最近做了一个利用去中心化存储技术<a href="https://ipfs.io/" target="_blank" rel="noopener">IPFS</a>实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。<br>于是就有了想用IPFS托管一个博客网页的想法，具体做法应该是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ipfs add &lt;index.html&gt; <span class="comment">#将博客静态网页add到ipfs上，得到hash</span></span><br><span class="line">$ ipfs name publish &lt;<span class="built_in">hash</span>&gt; <span class="comment">#将博客的hash和IPFS namespace绑定</span></span><br></pre></td></tr></table></figure>
+<p>这样操作就可以直接通过IPNS来查看网页，链接可能是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://&lt;IPFS http Gateway&gt;/ipns/&lt;peerid&gt;</span><br></pre></td></tr></table></figure>
+<p>可是这样的主页地址会是一个很长的链接，譬如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://&lt;xxx.xx.xxx.xxx:8080&gt;/ipns/QmSrYNxg3RdhdyyGYNBSqdH1wdRGqf1ENhXGQaHL8rACLb/</span><br></pre></td></tr></table></figure>
+<p>这样的一串链接很难映射到一个域名上。<br>因此，退而求其次，利用github page托管静态网页，<br>把如图片/音乐/视频等大体积资源文件放在IPFS上，<br>免受了github page空间的限制</p>
 <hr>
-<h4 id="把搭个人博客的坑踩一遍"><a href="#把搭个人博客的坑踩一遍" class="headerlink" title="把搭个人博客的坑踩一遍"></a>把搭个人博客的坑踩一遍</h4><p>网络上有很多关于用<a href="https://github.com" target="_blank" rel="noopener">github</a> page + <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>建立博客的文章。花了一些时间，把所有的步骤走了一遍，搭起来这个架子，期间也遇到了一些问题，关于流程简单记录：</p>
+<h4 id="把搭个人博客的坑踩一遍"><a href="#把搭个人博客的坑踩一遍" class="headerlink" title="把搭个人博客的坑踩一遍"></a>把搭个人博客的坑踩一遍</h4><p>网络上有很多关于用<a href="https://github.com" target="_blank" rel="noopener">github</a> page 托管网页，用 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>生成博客静态网页的做法的文章。花了一些时间，把所有的步骤走了一遍，搭起来这个架子，期间也遇到了一些问题，简单记录：</p>
 <ol>
 <li>本地搭建博客生成工具Hexo</li>
 </ol>
 <ul>
-<li>安装node.js<br>不同的系统安装方式不太一样，windows上<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">直接下载</a>并安装。</li>
+<li>安装node.js </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">验证是否把nodejs和npm（下载工具）安装成功</span><br><span class="line">如果没有及时生效，可以重启一次电脑</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">安装完之后可以建立2个文件夹，并配置下载资源存储路径，</span><br><span class="line">这样安装Hexo等module的时候，就可以方便地找到它。配置如下：</span><br><span class="line">npm config set prefix &quot;installpath\nodejs\node_global&quot;</span><br><span class="line">npm config set cache &quot;installpath\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
+<p>不同的系统安装方式不太一样，windows上<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">直接下载</a>并安装，安装的时候默认把环境变量配置完成，用如下命令，验证是否把nodejs和npm（下载工具）安装成功，如果没有及时生效，可以重启一次电脑</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>额外的，安装完之后可以建立2个文件夹，并配置下载资源存储路径，<br>这样安装Hexo等module的时候，就可以方便地找到它。配置如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm config set prefix &quot;installpath\nodejs\node_global&quot;</span><br><span class="line">$ npm config set cache &quot;installpath\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>安装git</li>
 </ul>
@@ -185,11 +196,29 @@
 <ul>
 <li>安装Hexo</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">用npm直接下载到node_global目录下</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">简写：npm i -g hexo</span><br></pre></td></tr></table></figure>
+<p>用npm直接下载到node_global目录下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">或简写 $ npm i -g hexo</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>建立本地博客系统</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在本地路径下建立一个文件夹用于存放博客系统的文件路径</span><br><span class="line">cd &lt;blog path&gt;</span><br><span class="line">xxx:hexo init   #初始化hexo</span><br><span class="line">xxx:hexo generate(简写hexo g) #生成静态网页</span><br><span class="line"></span><br><span class="line">此时本地已经生成了一个默认的博客模板</span><br><span class="line">xxx:hexo server #开启本地server，此时可以通过localhost:4000来查看博客网页</span><br></pre></td></tr></table></figure>
+<p>在本地路径下建立一个文件夹用于存放博客系统的文件路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;blog path&gt;</span><br><span class="line">$ hexo init   <span class="comment">#初始化hexo</span></span><br></pre></td></tr></table></figure></p>
+<p>生成如下目录结构</p>
+<p><img src="http://210.73.213.194:8080/ipfs/QmQqKf4Cw6Zw7q3WLnDfC9oqNdhoXJdQA2vbGehgQjLPRh" alt="image"></p>
+<p>其中：</p>
+<ul>
+<li>node_modules：是依赖包</li>
+<li>public：存放的是生成的页面</li>
+<li>scaffolds：命令生成文章等的模板</li>
+<li>source：用命令创建的各种文章</li>
+<li>themes：主题</li>
+<li>_config.yml：整个博客的配置</li>
+<li>db.json：source解析所得到的</li>
+<li>package.json：项目所需模块项目的配置信息</li>
+</ul>
+<p>在本地生成了一个默认的博客网页</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate(简写hexo g) #生成静态网页</span><br></pre></td></tr></table></figure>
+<p>   开启本地server，默认可以通过localhost:4000来查看博客网页</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>将网页托管到GitHub上</li>
 </ol>
@@ -197,13 +226,17 @@
 <li>在github上建立一个工程，如 <a href="https://github.com/vandep/vandep.github.io" target="_blank" rel="noopener">https://github.com/vandep/vandep.github.io</a></li>
 <li>用编辑器打开你的blog项目，修改_config.yml文件deploy配置</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/vandep/vandep.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  此处有坑：</span><br><span class="line">  type/repo/branch的冒号后面都必须有一个控制，否则发布的时候会报错</span><br><span class="line">  type/repo/branch和deploy的缩进必须是一个TAB</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/vandep/vandep.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> 此处有坑：<br>  type/repo/branch的冒号后面都必须有一个控制，否则发布的时候会报错<br>  type/repo/branch和deploy的缩进必须是一个TAB</p>
+</blockquote>
 <ul>
-<li>安装deploy工具</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<ul>
-<li>发布网页<br>xxx：hexo deploy</li>
+<li><p>安装deploy工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发布网页</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ol start="4">
 <li>绑定域名（非必需）</li>
@@ -219,13 +252,17 @@
 <ul>
 <li>在你的域名服务器上添加一条CNAME</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">一条主机名为www， value为vandep.github.io，这样允许带www来访问自己的域名</span><br><span class="line">一条主机名为@，value为vandep.github.io，允许不带www访问自己的域名</span><br><span class="line">可是godaddy中部允许使用@，所以只能添加一条A记录：</span><br><span class="line">ping 自己的域名或者vandep.github.io的网页，得到一个ip，然后添加绑定这个ip</span><br><span class="line">这样有一个坏处就是是固定主机的，可能有时候ip会变，也没法CDN加速</span><br></pre></td></tr></table></figure>
+<p><img src="http://210.73.213.194:8080/ipfs/QmPrqLmzhgBFUD2asUzTSRYRreSnWFd4aMBuEDmAuVw6jw" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">一条主机名为www， value为vandep.github.io，这样允许带www来访问自己的域名</span><br><span class="line"></span><br><span class="line">一条主机名为@，value为vandep.github.io，允许不带www访问自己的域名</span><br><span class="line"></span><br><span class="line">可是godaddy中不允许CNAME的主机名使用@，所以只能添加一条A记录：</span><br><span class="line"></span><br><span class="line">ping vandep.github.io，得到一个ip，</span><br><span class="line">添加A记录主机名为@， 指为IP</span><br><span class="line"></span><br><span class="line">这样有一个坏处就是是固定主机的，可能有时候ip会变，也没法CDN加速</span><br></pre></td></tr></table></figure>
 <ul>
-<li>添加CNAME文件</li>
+<li>在CNAME文件中添加域名 如 kekbin.com</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在本机 blog 根目录下的source文件夹中添加</span><br><span class="line">否则每次重新deploy的时候，都会重新生成CNAME，这样需要重新在github上添加域名。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在CNAME文件中添加域名放在本机 blog 根目录下的source文件夹中<br>否则每次重新deploy的时候，都会重新生成CNAME，这样需要重新在github上添加域名。</p>
+</blockquote>
 <p>5.每次修改网页的内容，重新发布</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">一键</span><br><span class="line">xxx:hexo g -d  # 生成且发布</span><br><span class="line">或者先生成，在本地验证</span><br><span class="line">hexo g</span><br><span class="line">验证之后发布</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>一键生成并发布<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure></p>
+<p>或者先在本地生成，启动本地server，在localhost:4000验证之后再发布<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line"><span class="comment">#验证之后</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
 <p>至此，简单的架子搭好，架子搭好之后，还需要漂亮的外衣，这就需要借助theme了，下篇介绍。</p>
 
         </div>
@@ -234,7 +271,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2018/05/31/博客之旅启程(1)/" data-id="cjhuiob7w0000r8274lz131rk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/31/博客之旅启程(1)/" data-id="cjhvby84a0000es27i9lapbjh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

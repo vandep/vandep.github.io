@@ -179,7 +179,8 @@
     
 
         <p class="article-excerpt">
-            心血来潮最近做一个项目，利用去中心化存储技术IPFS实现dweb，将个人内容发布到IPFS上，从而生成个人主页。于是就有了一个想法，用IPFS作为网页资源器来实现一个博客系统。让用户自动生成博客一键发布。相比传统的利用github page托管，hexo来生成静态并发布网页的做法，用IPFS的长处在于，可以将大体积的媒体资源放在IPFS上，免受了github page空间的限制，且不用将大文件放在
+            心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了想用IPFS托管一个博客网页的想法，具体做法应该是：
+12$ ipfs add &lt;index.html&gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &lt;hash&gt; #将博客的hash和IPFS namespa
         </p>
     </div>
 </article>
