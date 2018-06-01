@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="blog,hexo" />
     
-    <meta name="description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了想用IPFS托管一个博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
+    <meta name="description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了一个用IPFS托管博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespac">
 <meta name="keywords" content="blog,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客之旅启程--搭架子">
 <meta property="og:url" content="http://yoursite.com/2018/05/31/博客之旅启程(1)/index.html">
 <meta property="og:site_name" content="可可冰的奇幻之旅">
-<meta property="og:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了想用IPFS托管一个博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
+<meta property="og:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了一个用IPFS托管博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespac">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://210.73.213.194:8080/ipfs/QmTcycNzSyERKj3NQckZBZaYUgkN4mJsjuRAzjYrmgdfqQ">
-<meta property="og:updated_time" content="2018-06-01T02:08:52.442Z">
+<meta property="og:updated_time" content="2018-06-01T02:10:41.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客之旅启程--搭架子">
-<meta name="twitter:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了想用IPFS托管一个博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
+<meta name="twitter:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了一个用IPFS托管博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespac">
 <meta name="twitter:image" content="http://210.73.213.194:8080/ipfs/QmTcycNzSyERKj3NQckZBZaYUgkN4mJsjuRAzjYrmgdfqQ">
     
 
@@ -168,7 +168,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="心血来潮"><a href="#心血来潮" class="headerlink" title="心血来潮"></a>心血来潮</h4><p>最近做了一个利用去中心化存储技术<a href="https://ipfs.io/" target="_blank" rel="noopener">IPFS</a>实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。<br>于是就有了想用IPFS托管一个博客网页的想法，具体做法应该是：</p>
+            <h4 id="心血来潮"><a href="#心血来潮" class="headerlink" title="心血来潮"></a>心血来潮</h4><p>最近做了一个利用去中心化存储技术<a href="https://ipfs.io/" target="_blank" rel="noopener">IPFS</a>实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。<br>于是就有了一个用IPFS托管博客网页的想法，具体做法应该是：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ipfs add &lt;index.html&gt; <span class="comment">#将博客静态网页add到ipfs上，得到hash</span></span><br><span class="line">$ ipfs name publish &lt;<span class="built_in">hash</span>&gt; <span class="comment">#将博客的hash和IPFS namespace绑定</span></span><br></pre></td></tr></table></figure>
 <p>这样操作就可以直接通过IPNS来查看网页，链接可能是这样的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://&lt;IPFS http Gateway&gt;/ipns/&lt;peerid&gt;</span><br></pre></td></tr></table></figure>
