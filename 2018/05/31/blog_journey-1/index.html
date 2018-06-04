@@ -21,7 +21,7 @@
 <meta property="og:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了一个用IPFS托管博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://210.73.213.194:8080/ipfs/QmTcycNzSyERKj3NQckZBZaYUgkN4mJsjuRAzjYrmgdfqQ">
-<meta property="og:updated_time" content="2018-06-01T06:48:30.047Z">
+<meta property="og:updated_time" content="2018-06-04T02:39:40.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客之旅--搭架子">
 <meta name="twitter:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了一个用IPFS托管博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
@@ -186,9 +186,9 @@
 </ul>
 <p>不同的系统安装方式不太一样，windows上<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">直接下载</a>并安装，安装的时候默认把环境变量配置完成，用如下命令，验证是否把nodejs和npm（下载工具）安装成功，如果没有及时生效，可以重启一次电脑</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>额外的，安装完之后可以建立2个文件夹，并配置下载资源存储路径，<br>这样安装Hexo等module的时候，就可以方便地找到它。配置如下：</p>
-</blockquote>
+<ul>
+<li>额外的，安装完之后可以建立2个文件夹，并配置下载资源存储路径，<br>这样安装Hexo等module的时候，就可以方便地找到它。配置如下：<br>*</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm config set prefix &quot;installpath\nodejs\node_global&quot;</span><br><span class="line">$ npm config set cache &quot;installpath\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>安装git</li>
@@ -228,9 +228,8 @@
 <li>用编辑器打开你的blog项目，修改_config.yml文件deploy配置</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/vandep/vandep.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p> 此处有坑：<br>  type/repo/branch的冒号后面都必须有一个控制，否则发布的时候会报错<br>  type/repo/branch和deploy的缩进必须是一个TAB</p>
-</blockquote>
+<p><strong>  此处有坑：<br>  type/repo/branch的冒号后面都必须有一个控制，否则发布的时候会报错<br>  type/repo/branch和deploy的缩进必须是一个TAB
+</strong></p>
 <ul>
 <li><p>安装deploy工具</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
