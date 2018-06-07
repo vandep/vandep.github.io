@@ -21,7 +21,7 @@
 <meta property="og:description" content="概述IPFS的全称是InterPlanetary File System（星际文件系统），从名称上看，这是一个很炫酷、很有野心的项目。简单地说它就是一个点对点的分布式文件系统。官网和github都可以找到所有的相关资料。建议从它的白皮书，和直译中文版本开始了解，后面我们会慢慢地认识它。白皮书上指出了多个应用场景：   As a mounted global filesystem, under /">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://210.73.213.194:8080/ipfs/QmeLRbhaxb7gbfX6RDwfQhUCrjZRfeDwfY6P3Q4WC4CoDn">
-<meta property="og:updated_time" content="2018-06-06T08:38:36.846Z">
+<meta property="og:updated_time" content="2018-06-07T02:51:45.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IPFS实践之初体验">
 <meta name="twitter:description" content="概述IPFS的全称是InterPlanetary File System（星际文件系统），从名称上看，这是一个很炫酷、很有野心的项目。简单地说它就是一个点对点的分布式文件系统。官网和github都可以找到所有的相关资料。建议从它的白皮书，和直译中文版本开始了解，后面我们会慢慢地认识它。白皮书上指出了多个应用场景：   As a mounted global filesystem, under /">
@@ -203,8 +203,9 @@
 <p>开启deamon之后，会启动demo中包含的IPFS服务，至此，本机就可以作为一个”个人云盘”来使用了。</p>
 <h4 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; ipfs add &lt;filePath&gt; //添加文件</span><br><span class="line">&gt; ipfs add -r &lt;dirPath&gt; //添加文件</span><br></pre></td></tr></table></figure>
 <p>文件添加时，大文件会按照256KB的大小去分块，分块内容存储在.ipfs repo下的blocks文件夹下，每一个块都对应一个hash。文件添加完成之后，会返回一个文件hash，文件夹是递归添加的，会将每一个文件的hash返回，最后一个返回文件夹hash。由于IPFS中，文件都是基于内容寻址的，用户不需要关心这些文件放在哪，这些hash就是用来查找和得到文件的索引。</p>
-<h4 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h4><p>想要拿到一个IPFS上的文件，只需要知道文件的hash即可。<br>下载命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ipfs get &lt;<span class="built_in">hash</span>&gt; -o &lt;output_path&gt;</span><br></pre></td></tr></table></figure></p>
-<p>或者查看命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ipfs cat &lt;<span class="built_in">hash</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h4><p>想要拿到一个IPFS上的文件，只需要知道文件的hash即可。<br>下载命令：</p>
+<pre><code>&gt; ipfs get &lt;hash&gt; -o &lt;output_path&gt;
+</code></pre><p>或者查看命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ipfs cat &lt;<span class="built_in">hash</span>&gt;</span><br></pre></td></tr></table></figure></p>
 <p>IPFS 的所有文件都是在本地的，Pin add可以将远端节点的文件长期保留在本地，不被垃圾回收。通过 add 添加的文件默认就是pin过的。</p>
 <p>pin还有一个作用，pin add之后，这个节点就可以同add这个文件的节点一样，作为整个文件的服务节点。其他节点在get或pin add的时候理论上可以从这2个节点的任何一个节点拿去这个文件的块。当有很多个节点都pin add这个文件时，就会增加这个文件的获取速度，也降低了文件被删除的可能。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; ipfs pin add &lt;<span class="built_in">hash</span>&gt;</span><br><span class="line">&gt; ipfs pin ls //查看哪些文件在本地是持久化的。</span><br></pre></td></tr></table></figure>
