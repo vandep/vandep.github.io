@@ -21,7 +21,7 @@
 <meta property="og:description" content="概述IPFS的全称是InterPlanetary File System（星际文件系统），从名称上看，这是一个很炫酷、很有野心的项目。简单地说它就是一个点对点的分布式文件系统。官网和github都可以找到所有的相关资料。建议从它的白皮书，和直译中文版本开始了解，后面我们会慢慢地认识它。白皮书上指出了多个应用场景：   As a mounted global filesystem, under /">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://210.73.213.194:8080/ipfs/QmeLRbhaxb7gbfX6RDwfQhUCrjZRfeDwfY6P3Q4WC4CoDn">
-<meta property="og:updated_time" content="2018-06-07T04:07:23.706Z">
+<meta property="og:updated_time" content="2018-06-07T04:09:12.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IPFS实践之初体验">
 <meta name="twitter:description" content="概述IPFS的全称是InterPlanetary File System（星际文件系统），从名称上看，这是一个很炫酷、很有野心的项目。简单地说它就是一个点对点的分布式文件系统。官网和github都可以找到所有的相关资料。建议从它的白皮书，和直译中文版本开始了解，后面我们会慢慢地认识它。白皮书上指出了多个应用场景：   As a mounted global filesystem, under /">
@@ -209,7 +209,7 @@
 <p>pin还有一个作用，pin add之后，这个节点就可以同add这个文件的节点一样，作为整个文件的服务节点。其他节点在get或pin add的时候理论上可以从这2个节点的任何一个节点拿去这个文件的块。当有很多个节点都pin add这个文件时，就会增加这个文件的获取速度，也降低了文件被删除的可能。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; ipfs pin add &lt;<span class="built_in">hash</span>&gt;</span><br><span class="line">&gt; ipfs pin ls //查看哪些文件在本地是持久化的。</span><br></pre></td></tr></table></figure>
 <h4 id="分享文件"><a href="#分享文件" class="headerlink" title="分享文件"></a>分享文件</h4><p>现实中，用户习惯获取内容的方式都通过http的方式，让用户去敲get命令去或取文件恐怕只有极客们会尝试吧。回想一下，云盘分享文件的做法，生成一个http url，把链接分享给需要的人。</p>
-<p>IPFS demo也提供了一个http gateway，官方（公网）用的是 <a href="http://ipfs.io,所以分享的链接可以是" target="_blank" rel="noopener">http://ipfs.io,所以分享的链接可以是</a>:</p>
+<p>IPFS demo也提供了一个http gateway，官方（公网）用的是 <a href="http://ipfs.io" target="_blank" rel="noopener">http://ipfs.io</a>, 所以分享的链接可以是:</p>
 <pre><code>http://ipfs.io/ipfs/&lt;file hash&gt;
 </code></pre><p>由于某些已知原因，ipfs.io这个网关在国内是没法正常使用的，因此有条件的可以在自己的服务器上部署一个IPFS gateway（Ipfs 私网），这样，分享的链接可以是</p>
 <pre><code>http://&lt;gateway_host&gt;/ipfs/&lt;file hash&gt;
