@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>简单合同管理程序开发记录 | 可可冰的奇幻之旅</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="c-sharp,wpf" />
+    
+    <meta name="description" content="最近一个朋友表示，他们公司的合同用Excel管理，多了之后变得很麻烦，让我帮他做个合同管理的小工具，利用最近的闲暇时间，用WPF写了一个小工具。 需求微信上简单的聊天，把他一堆不太具象的想法归纳起来，罗列需求，化成思维导图比较清晰了。  开发环境由于朋友的电脑都使用的windows，所以采用vs2017 + WPF的开发桌面应用是比较方便的选择。 模块划分 UI   采用Blend 2017画一个">
+<meta name="keywords" content="c-sharp,wpf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单合同管理程序开发记录">
+<meta property="og:url" content="http://yoursite.com/2018/06/25/simple_cm_wiki/index.html">
+<meta property="og:site_name" content="可可冰的奇幻之旅">
+<meta property="og:description" content="最近一个朋友表示，他们公司的合同用Excel管理，多了之后变得很麻烦，让我帮他做个合同管理的小工具，利用最近的闲暇时间，用WPF写了一个小工具。 需求微信上简单的聊天，把他一堆不太具象的想法归纳起来，罗列需求，化成思维导图比较清晰了。  开发环境由于朋友的电脑都使用的windows，所以采用vs2017 + WPF的开发桌面应用是比较方便的选择。 模块划分 UI   采用Blend 2017画一个">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://210.73.213.194:8080/ipfs/QmcJzUnLgFGNKq3rpxpXREctpuNAhGeygqZNfHx8rzTzge">
+<meta property="og:updated_time" content="2018-06-25T08:00:34.981Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单合同管理程序开发记录">
+<meta name="twitter:description" content="最近一个朋友表示，他们公司的合同用Excel管理，多了之后变得很麻烦，让我帮他做个合同管理的小工具，利用最近的闲暇时间，用WPF写了一个小工具。 需求微信上简单的聊天，把他一堆不太具象的想法归纳起来，罗列需求，化成思维导图比较清晰了。  开发环境由于朋友的电脑都使用的windows，所以采用vs2017 + WPF的开发桌面应用是比较方便的选择。 模块划分 UI   采用Blend 2017画一个">
+<meta name="twitter:image" content="http://210.73.213.194:8080/ipfs/QmcJzUnLgFGNKq3rpxpXREctpuNAhGeygqZNfHx8rzTzge">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a9ab7ec1dbc49dd13d14508d0e179f8b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/笔记/">笔记</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/项目/">项目</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/项目/">项目</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-simple_cm_wiki" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        简单合同管理程序开发记录
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/06/25/simple_cm_wiki/" class="article-date">
+            <time datetime="2018-06-24T16:00:00.000Z" itemprop="datePublished">2018-06-25</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/c-sharp/">c-sharp</a>, <a class="tag-link" href="/tags/wpf/">wpf</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>最近一个朋友表示，他们公司的合同用Excel管理，多了之后变得很麻烦，让我帮他做个合同管理的小工具，利用最近的闲暇时间，用WPF写了一个小工具。</p>
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>微信上简单的聊天，把他一堆不太具象的想法归纳起来，罗列需求，化成思维导图比较清晰了。</p>
+<p><img src="http://210.73.213.194:8080/ipfs/QmcJzUnLgFGNKq3rpxpXREctpuNAhGeygqZNfHx8rzTzge" alt=""></p>
+<h4 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h4><p>由于朋友的电脑都使用的windows，所以采用vs2017 + WPF的开发桌面应用是比较方便的选择。</p>
+<h4 id="模块划分"><a href="#模块划分" class="headerlink" title="模块划分"></a>模块划分</h4><ul>
+<li><p>UI</p>
+<p>  采用Blend 2017画一个简单的UI图，然后在稍修改xaml文件，UI便可成型</p>
+</li>
+<li><p>数据模型<br>由于WPF采用MVVM的模式，数据模型只需实现INotifyPropertyChanged接口即可</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title">SimpleCM.Data</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Contract</span>: <span class="title">INotifyPropertyChanged</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> Id &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _contractNumber;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> ContractNumber</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _contractNumber = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"ContractNumber"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">get</span> =&gt; _contractNumber;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _projectCategory;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> ProjectCategory</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _projectCategory;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _projectCategory = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"ProjectCategory"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _contractName;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> ContractName</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _contractName = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"ContractName"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _contractName;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">long</span> _contractDate;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> ContractDate</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _contractDate = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"ContractDate"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _contractDate;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _projectDescription;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> ProjectDescription</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _projectDescription = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"ProjectDescription"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _projectDescription;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _contractCompany;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> ContractCompany</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _contractCompany = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"ContractCompany"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _contractCompany;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _cooperatorCompany;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> CooperatorCompany</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _cooperatorCompany = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"CooperatorCompany"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _cooperatorCompany;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">long</span> _cost;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> Cost</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _cost = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"Cost"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _cost;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">long</span> _peceivables_1;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> Peceivables_1</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _peceivables_1;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _peceivables_1 = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"Peceivables_1"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">long</span> _peceivables_2;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> Peceivables_2</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _peceivables_2;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _peceivables_2 = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"Peceivables_2"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">long</span> _peceivables_3;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> Peceivables_3</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _peceivables_3;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _peceivables_3 = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"Peceivables_3"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _baseInfo;</span><br><span class="line">        <span class="keyword">readonly</span> <span class="keyword">string</span> format = <span class="string">"项目编号:&#123;0&#125;\n项目名称:&#123;1&#125;\n项目类别:&#123;2&#125;\n项目日期:&#123;3&#125;\n"</span> +</span><br><span class="line">            <span class="string">"签约单位:&#123;4&#125;\n合作单位:&#123;5&#125;\n项目描述:&#123;6&#125;\n总费用:&#123;7&#125;\n"</span> +</span><br><span class="line">            <span class="string">"应付款项一:&#123;8&#125;\n应付款项二:&#123;9&#125;\n应付款项三&#123;10&#125;"</span>; </span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> BaseInfo</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                DateTime datetime = Util.GetTimeFromMillis(ContractDate);</span><br><span class="line">                <span class="keyword">string</span> dateInfo = <span class="keyword">string</span>.Format(<span class="string">"&#123;0&#125;年&#123;1&#125;月&#123;2&#125;日"</span>, datetime.Year, datetime.Month, datetime.Day);</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">string</span>.Format(format, ContractNumber, ContractName, ProjectCategory,</span><br><span class="line">                    dateInfo, ContractCompany, CooperatorCompany, ProjectDescription, Cost, Peceivables_1,Peceivables_2, Peceivables_3);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _baseInfo = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"BaseInfo"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _aditionals;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> Aditionals</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _aditionals;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _aditionals = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"Aditionals"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> ObservableCollection&lt;<span class="keyword">string</span>&gt; AddtionList</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                ObservableCollection&lt;<span class="keyword">string</span>&gt; list = <span class="keyword">new</span> ObservableCollection&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line">                <span class="keyword">if</span> (!<span class="keyword">string</span>.IsNullOrEmpty(_aditionals))</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">string</span>[] infos = _aditionals.Split(<span class="string">' '</span>);</span><br><span class="line">                    <span class="keyword">if</span> (infos != <span class="literal">null</span> &amp;&amp; infos.Length &gt; <span class="number">0</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; infos.Length; i++)</span><br><span class="line">                        &#123;</span><br><span class="line">                            list.Add(infos[i]);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> list;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">string</span> <span class="title">BillNoteTostring</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="comment">//不能加@,否则原样输出\r\n,不换行</span></span><br><span class="line">            <span class="keyword">string</span> format = <span class="string">"公司名称:&#123;0&#125;\n纳税人识别号:&#123;1&#125;\n地址:&#123;2&#125;\n电话:&#123;3&#125;\n银行:&#123;4&#125;\n账号:&#123;5&#125;"</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">string</span>.Format(format, BillNoteCompanyName, BillNoteTaxFileNum,</span><br><span class="line">                BillNoteAddress, BillNotePhoneNumber, BillNoteBank, BillNoteBankAccount);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">FromBillNoteString</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">string</span>[] noteItems = _billNoteInfo.Split(<span class="string">'\n'</span>);</span><br><span class="line">            <span class="keyword">if</span> (noteItems != <span class="literal">null</span> &amp;&amp; noteItems.Length == <span class="number">6</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                BillNoteCompanyName = noteItems[<span class="number">0</span>].Substring(noteItems[<span class="number">0</span>].IndexOf(<span class="string">':'</span>) + <span class="number">1</span>);</span><br><span class="line">                BillNoteTaxFileNum = noteItems[<span class="number">1</span>].Substring(noteItems[<span class="number">1</span>].IndexOf(<span class="string">':'</span>) + <span class="number">1</span>);</span><br><span class="line">                BillNoteAddress = noteItems[<span class="number">2</span>].Substring(noteItems[<span class="number">2</span>].IndexOf(<span class="string">':'</span>) + <span class="number">1</span>);</span><br><span class="line">                BillNotePhoneNumber = noteItems[<span class="number">3</span>].Substring(noteItems[<span class="number">3</span>].IndexOf(<span class="string">':'</span>) + <span class="number">1</span>);</span><br><span class="line">                BillNoteBank = noteItems[<span class="number">4</span>].Substring(noteItems[<span class="number">4</span>].IndexOf(<span class="string">':'</span>) + <span class="number">1</span>);</span><br><span class="line">                BillNoteBankAccount = noteItems[<span class="number">5</span>].Substring(noteItems[<span class="number">5</span>].IndexOf(<span class="string">':'</span>) + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _billNoteInfo;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> BillNoteInfo</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> =&gt; _billNoteInfo;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _billNoteInfo = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"BillNoteInfo"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _billNoteCompanyName;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> BillNoteCompanyName</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> _billNoteCompanyName;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _billNoteCompanyName = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"BillNoteCompanyName"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _billNoteTaxFileNum;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> BillNoteTaxFileNum</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> _billNoteTaxFileNum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _billNoteTaxFileNum = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"BillNoteTaxFileNum"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _billNoteAddress;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> BillNoteAddress</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> _billNoteAddress;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _billNoteAddress = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"BillNoteAddress"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _billNotePhoneNumber;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> BillNotePhoneNumber</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> _billNotePhoneNumber;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _billNotePhoneNumber = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"BillNotePhoneNumber"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _billNoteBank;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> BillNoteBank</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> _billNoteBank;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _billNoteBank = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"BillNoteBank"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _billNoteBankAccount;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> BillNoteBankAccount</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> _billNoteBankAccount;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                _billNoteBankAccount = <span class="keyword">value</span>;</span><br><span class="line">                OnPropertyChanged(<span class="string">"BillNoteBankAccount"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">string</span> <span class="title">ToString</span>(<span class="params"></span>) </span>=&gt; ContractName;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">event</span> PropertyChangedEventHandler PropertyChanged;</span><br><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">OnPropertyChanged</span>(<span class="params"><span class="keyword">string</span> info</span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> handler = PropertyChanged;</span><br><span class="line">            handler?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(info));</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>持久化存储<br>采用sqlite3进行存储</p>
+</li>
+<li><p>数据绑定</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ListBox</span> <span class="attr">x:Name</span>=<span class="string">"contract_list_box"</span> <span class="attr">Grid.Row</span>=<span class="string">"1"</span> <span class="attr">HorizontalAlignment</span>=<span class="string">"Left"</span> <span class="attr">Width</span>=<span class="string">"250"</span> <span class="attr">Margin</span>=<span class="string">"20"</span> <span class="attr">IsSynchronizedWithCurrentItem</span>=<span class="string">"True"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">ItemsSource</span>=<span class="string">"&#123;Binding Source=&#123;x:Static util:Contracts.Instance&#125;&#125;"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections.ObjectModel;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SimpleCM.Data</span></span><br><span class="line">&#123;</span><br><span class="line">    class Contracts: ObservableCollection&lt;Contract&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> Contracts Instance &#123; <span class="keyword">get</span>; &#125; = <span class="keyword">new</span> Contracts();</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AddContact</span>(<span class="params">Contract c</span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            Add(c);</span><br><span class="line">            ContractDB.Instance.InsertItem(c);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p><a href="https://github.com/vandep/simplecm" target="_blank" rel="noopener">Github链接</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2018/06/25/simple_cm_wiki/" data-id="cjitz1abt0000c427v4ylt17e" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/vandep" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="https://weibo.com/mpc2010" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/06/14/javascript-study-1/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">javascript学习笔记1</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/25/simple_cm_wiki/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://210.73.213.194:8080/ipfs/QmcJzUnLgFGNKq3rpxpXREctpuNAhGeygqZNfHx8rzTzge)" alt="简单合同管理程序开发记录" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/项目/">项目</a></p>
+                            <p class="item-title"><a href="/2018/06/25/simple_cm_wiki/" class="title">简单合同管理程序开发记录</a></p>
+                            <p class="item-date"><time datetime="2018-06-24T16:00:00.000Z" itemprop="datePublished">2018-06-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/14/javascript-study-1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/笔记/">笔记</a></p>
+                            <p class="item-title"><a href="/2018/06/14/javascript-study-1/" class="title">javascript学习笔记1</a></p>
+                            <p class="item-date"><time datetime="2018-06-14T11:05:17.000Z" itemprop="datePublished">2018-06-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/07/IPFS-practice-2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://210.73.213.194:8080/ipfs/QmYt32dq2xp7TF8BbHs62bMi1d6ai38TEiXsF1WvCsayCE)" alt="IPFS实践之功能封装" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
+                            <p class="item-title"><a href="/2018/06/07/IPFS-practice-2/" class="title">IPFS实践之功能封装</a></p>
+                            <p class="item-date"><time datetime="2018-06-07T03:05:24.000Z" itemprop="datePublished">2018-06-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/06/IPFS-practice-1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://210.73.213.194:8080/ipfs/QmeLRbhaxb7gbfX6RDwfQhUCrjZRfeDwfY6P3Q4WC4CoDn)" alt="IPFS实践之初体验" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
+                            <p class="item-title"><a href="/2018/06/06/IPFS-practice-1/" class="title">IPFS实践之初体验</a></p>
+                            <p class="item-date"><time datetime="2018-06-06T03:05:24.000Z" itemprop="datePublished">2018-06-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/01/blog-journey-2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://210.73.213.194:8080/ipfs/QmWL6dhMvUQs1sh1J5kyMeLnU22ChVgiM2XBTvxCmsWArN)" alt="博客之旅-穿外衣" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
+                            <p class="item-title"><a href="/2018/06/01/blog-journey-2/" class="title">博客之旅-穿外衣</a></p>
+                            <p class="item-date"><time datetime="2018-06-01T02:37:44.000Z" itemprop="datePublished">2018-06-01</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目/">项目</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IPFS/">IPFS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-sharp/">c-sharp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wpf/">wpf</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/IPFS/" style="font-size: 20px;">IPFS</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/c-sharp/" style="font-size: 10px;">c-sharp</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/wpf/" style="font-size: 10px;">wpf</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 KekBin</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
