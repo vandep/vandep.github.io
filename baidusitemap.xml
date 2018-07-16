@@ -4,6 +4,75 @@
 
     
   <url>
+    <loc>https://kekbin.com/2018/07/16/NAS-DPFS/</loc>
+    <lastmod>2018-07-16T07:09:31.720Z</lastmod>
+    <data>
+        <display>
+        <title>NAS + DPFS-IPFS家庭云管理方案</title>
+        <pubTime>2018-07-16T07:02:03.000Z</pubTime>
+        
+        <tag>IPFS</tag>
+         
+        <tag>p2p</tag>
+         
+         
+           
+             
+              <breadCrumb title="项目" url="https://kekbin.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+          
+             
+              <breadCrumb title="技术" url="https://kekbin.com/categories/%E9%A1%B9%E7%9B%AE/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://kekbin.com/2018/06/14/javascript-study-1/</loc>
+    <lastmod>2018-07-02T08:26:25.551Z</lastmod>
+    <data>
+        <display>
+        <title>javascript学习笔记1</title>
+        <pubTime>2018-06-14T11:05:17.000Z</pubTime>
+        
+        <tag>html</tag>
+         
+        <tag>javascript</tag>
+         
+        <tag>web</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://kekbin.com/categories/%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://kekbin.com/2018/06/06/IPFS-practice-1/</loc>
+    <lastmod>2018-06-27T06:06:27.262Z</lastmod>
+    <data>
+        <display>
+        <title>IPFS实践之初体验</title>
+        <pubTime>2018-06-06T03:05:24.000Z</pubTime>
+        
+        <tag>IPFS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://kekbin.com/2018/06/26/p2p-network-1/</loc>
     <lastmod>2018-06-26T08:46:18.438Z</lastmod>
     <data>
@@ -71,50 +140,6 @@
     </url>
 
     
-  <url>
-    <loc>https://kekbin.com/2018/06/14/javascript-study-1/</loc>
-    <lastmod>2018-06-14T11:14:16.139Z</lastmod>
-    <data>
-        <display>
-        <title>javascript学习笔记1</title>
-        <pubTime>2018-06-14T11:05:17.000Z</pubTime>
-        
-        <tag>html</tag>
-         
-        <tag>javascript</tag>
-         
-        <tag>web</tag>
-         
-         
-           
-             
-              <breadCrumb title="笔记" url="https://kekbin.com/categories/%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>https://kekbin.com/2018/06/06/IPFS-practice-1/</loc>
-    <lastmod>2018-06-07T04:10:31.034Z</lastmod>
-    <data>
-        <display>
-        <title>IPFS实践之初体验</title>
-        <pubTime>2018-06-06T03:05:24.000Z</pubTime>
-        
-        <tag>IPFS</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://kekbin.com/2018/05/31/blog_journey-1/</loc>
