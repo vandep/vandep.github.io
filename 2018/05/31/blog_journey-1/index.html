@@ -21,7 +21,7 @@
 <meta property="og:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了一个用IPFS托管博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://210.73.213.194:8080/ipfs/QmTcycNzSyERKj3NQckZBZaYUgkN4mJsjuRAzjYrmgdfqQ">
-<meta property="og:updated_time" content="2018-06-04T02:46:21.865Z">
+<meta property="og:updated_time" content="2018-07-16T07:46:16.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客之旅--搭架子">
 <meta name="twitter:description" content="心血来潮最近做了一个利用去中心化存储技术IPFS实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。于是就有了一个用IPFS托管博客网页的想法，具体做法应该是： 12$ ipfs add &amp;lt;index.html&amp;gt; #将博客静态网页add到ipfs上，得到hash$ ipfs name publish &amp;lt;hash&amp;gt; #将博客的hash和IPFS namespa">
@@ -181,7 +181,7 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="http://210.73.213.194:8080/ipfs/QmTcycNzSyERKj3NQckZBZaYUgkN4mJsjuRAzjYrmgdfqQ" alt=""></p>
+            <p><img src="\res\blog-joureny-1\光影梅花.JPG" alt="光影梅花"></p>
 <h4 id="心血来潮"><a href="#心血来潮" class="headerlink" title="心血来潮"></a>心血来潮</h4><p>最近做了一个利用去中心化存储技术<a href="https://ipfs.io/" target="_blank" rel="noopener">IPFS</a>实现dweb的项目，将个人内容发布到IPFS上，生成个人主页展示。<br>于是就有了一个用IPFS托管博客网页的想法，具体做法应该是：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ipfs add &lt;index.html&gt; <span class="comment">#将博客静态网页add到ipfs上，得到hash</span></span><br><span class="line">$ ipfs name publish &lt;<span class="built_in">hash</span>&gt; <span class="comment">#将博客的hash和IPFS namespace绑定</span></span><br></pre></td></tr></table></figure>
 <p>这样操作就可以直接通过IPNS来查看网页，链接可能是这样的：</p>
@@ -214,7 +214,7 @@ var _hmt = _hmt || [];
 <li>建立本地博客系统</li>
 </ol>
 <p>在本地路径下建立一个文件夹用于存放博客系统的文件路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;blog path&gt;</span><br><span class="line">$ hexo init   <span class="comment">#初始化hexo</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="http://210.73.213.194:8080/ipfs/QmQqKf4Cw6Zw7q3WLnDfC9oqNdhoXJdQA2vbGehgQjLPRh" alt="生成的目录结构"></p>
+<p><img src="\res\blog-joureny-1\list.PNG" alt="生成的目录结构"></p>
 <p>其中：</p>
 <ul>
 <li>node_modules：是依赖包</li>
@@ -262,7 +262,7 @@ var _hmt = _hmt || [];
 <ul>
 <li>在你的域名服务器上添加一条CNAME</li>
 </ul>
-<p><img src="http://210.73.213.194:8080/ipfs/QmPrqLmzhgBFUD2asUzTSRYRreSnWFd4aMBuEDmAuVw6jw" alt="域名配置"></p>
+<p><img src="\res\blog-joureny-1\DNS.PNG" alt="域名配置"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">一条主机名为www， value为vandep.github.io，这样允许带www来访问自己的域名</span><br><span class="line"></span><br><span class="line">一条主机名为@，value为vandep.github.io，允许不带www访问自己的域名</span><br><span class="line"></span><br><span class="line">可是godaddy中不允许CNAME的主机名使用@，所以只能添加一条A记录：</span><br><span class="line"></span><br><span class="line">ping vandep.github.io，得到一个ip，</span><br><span class="line">添加A记录主机名为@， 指为IP</span><br><span class="line"></span><br><span class="line">这样的坏处就是是固定主机的，可能ip会变，也没法CDN加速</span><br></pre></td></tr></table></figure>
 <ul>
 <li>在CNAME文件中添加域名 如 kekbin.com</li>
@@ -502,7 +502,7 @@ var _hmt = _hmt || [];
                             <a href="/2018/06/07/IPFS-practice-2/" class="thumbnail">
     
     
-        <span style="background-image:url(http://210.73.213.194:8080/ipfs/QmYt32dq2xp7TF8BbHs62bMi1d6ai38TEiXsF1WvCsayCE)" alt="IPFS实践之功能封装" class="thumbnail-image"></span>
+        <span style="background-image:url(\res\ipfs-2\IMG_1817.JPG)" alt="IPFS实践之功能封装" class="thumbnail-image"></span>
     
     
 </a>

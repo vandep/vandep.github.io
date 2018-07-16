@@ -21,7 +21,7 @@
 <meta property="og:description" content="最近开始接触IPFS，前面博文中也略有提到过，它是一个去中心化的分布式网络文件系统。其核心之一就是P2P网络（peer-to-peer network），可以说P2P网络是IPFS的基础。IPFS项目组为P2P网络构建了一个单独的开源项目libp2p,使其不仅可以用在IPFS项目中，也可以用于构建其他的P2P网络。 p2p网络与中心化网络本文不想对两者的优劣进行比较，因为目前似乎比较它们的优劣也没">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://210.73.213.194:8080/ipfs/QmegcHbDSKevGUWeaPfV4scsKhcaURw2PhSTXbAcSbLy15">
-<meta property="og:updated_time" content="2018-06-26T08:46:18.438Z">
+<meta property="og:updated_time" content="2018-07-16T07:54:49.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="P2P网络由浅入深—基于局域网模型">
 <meta name="twitter:description" content="最近开始接触IPFS，前面博文中也略有提到过，它是一个去中心化的分布式网络文件系统。其核心之一就是P2P网络（peer-to-peer network），可以说P2P网络是IPFS的基础。IPFS项目组为P2P网络构建了一个单独的开源项目libp2p,使其不仅可以用在IPFS项目中，也可以用于构建其他的P2P网络。 p2p网络与中心化网络本文不想对两者的优劣进行比较，因为目前似乎比较它们的优劣也没">
@@ -184,7 +184,7 @@ var _hmt = _hmt || [];
             <p>最近开始接触IPFS，前面博文中也略有提到过，它是一个去中心化的分布式网络文件系统。其核心之一就是P2P网络（peer-to-peer network），可以说P2P网络是IPFS的基础。IPFS项目组为P2P网络构建了一个单独的开源项目<a href="https://github.com/libp2p/libp2p" target="_blank" rel="noopener">libp2p</a>,使其不仅可以用在IPFS项目中，也可以用于构建其他的P2P网络。</p>
 <h2 id="p2p网络与中心化网络"><a href="#p2p网络与中心化网络" class="headerlink" title="p2p网络与中心化网络"></a>p2p网络与中心化网络</h2><p>本文不想对两者的优劣进行比较，因为目前似乎比较它们的优劣也没有任何意义，毕竟现实情景下，两者是无法互相替代的。至少目前热点追捧的去中心化，还无法替代中心化的功能。</p>
 <p>计算机网络的初衷就是建立一个相互通信的对等的计算机网络，但是由于历史问题连接在网络的计算机配置不高，计算能力和存储能力不足，因此相当长一段时间我们更倾向于使用基于客户端（client）和服务器（server）的C/S模式及浏览器（Browser）和服务器（server）的B/S模式:</p>
-<p><img src="http://210.73.213.194:8080/ipfs/QmRutd4AjPkqjsmzW9UbsSVHKaBiTh8Qi78Ln3eTXfktJQ" alt="中心化网络简单示意"></p>
+<p><img src="\res\p2p-network-1\中心化网络示意.png" alt="中心化网络简单示意"></p>
 <p>在libp2p的白皮书中，列举了如下选用cs建构的理由：</p>
 <blockquote>
 <ul>
@@ -197,12 +197,12 @@ var _hmt = _hmt || [];
 </ul>
 </blockquote>
 <p>简单地概括就是高带宽、低成本、易维护、穿透性强、易开发。<br>其实这些理由也只是相对而言，例如低成本，服务器打带宽和电费支出，远高于对等节点的支出。所谓易维护，如果所有服务器宕机的话，这个服务是暂停的。</p>
-<p><img src="http://210.73.213.194:8080/ipfs/Qmb7ubfDSuEwnPnddYywT1KnkbCdtQER3zf8aGQj64uPH7" alt="P2P简单示意"></p>
+<p><img src="\res\p2p-network-1\p2p简单拓扑.png" alt="P2P简单示意"></p>
 <p>当然上图只是简单的示意，具体P2P的网络拓扑远比图示更多样、更复杂。P2P网络中的所有节点都是对等的，各台计算机有相同的功能，无主从之分，一台计算机既可作为服务器，设定共享资源供网络中其他计算机所使用，又可以作为工作站，整个网络一般来说不依赖专用的集中服务器，也没有专用的工作站。网络中的每一台计算机既能充当网络服务的请求者，又对其它计算机的请求做出响应，提供资源、服务和内容。</p>
 <p>听起来，比中心化的网络更加诱人对吧。这样的对等网络需要解决的事情还有很多，如NAT后面的节点彼此发现和可达、各个节点的吞吐量是否能达到人们对性能的可忍受度。</p>
 <hr>
 <h2 id="基于局域网环境的P2P模型"><a href="#基于局域网环境的P2P模型" class="headerlink" title="基于局域网环境的P2P模型"></a>基于局域网环境的P2P模型</h2><p>之前一直在做局域网的文件传输工具的开发，其实局域网文件传输所需建立的网络，从广泛意义上讲，也是一个P2P的网络，只不过它的情况会比广域网上的P2P要简单的多。</p>
-<p><img src="http://210.73.213.194:8080/ipfs/QmegcHbDSKevGUWeaPfV4scsKhcaURw2PhSTXbAcSbLy15" alt="局域网下的p2p拓扑"></p>
+<p><img src="\res\p2p-network-1\局域网下的p2p.png" alt="局域网下的p2p拓扑"></p>
 <ul>
 <li>无需考虑NAT穿透，因为每个节点都是在同一个网关下</li>
 <li>节点彼此发现简单</li>
@@ -466,7 +466,7 @@ var _hmt = _hmt || [];
                             <a href="/2018/06/07/IPFS-practice-2/" class="thumbnail">
     
     
-        <span style="background-image:url(http://210.73.213.194:8080/ipfs/QmYt32dq2xp7TF8BbHs62bMi1d6ai38TEiXsF1WvCsayCE)" alt="IPFS实践之功能封装" class="thumbnail-image"></span>
+        <span style="background-image:url(\res\ipfs-2\IMG_1817.JPG)" alt="IPFS实践之功能封装" class="thumbnail-image"></span>
     
     
 </a>
