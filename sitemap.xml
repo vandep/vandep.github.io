@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kekbin.com/2018/06/06/IPFS-practice-1/</loc>
+    
+    <lastmod>2018-07-16T08:03:52.157Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kekbin.com/2018/06/07/IPFS-practice-2/</loc>
+    
+    <lastmod>2018-07-16T08:03:36.468Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kekbin.com/2018/06/25/simple_cm_wiki/</loc>
     
     <lastmod>2018-07-16T07:55:24.603Z</lastmod>
@@ -19,20 +33,6 @@
     <loc>https://kekbin.com/2018/07/16/NAS-DPFS/</loc>
     
     <lastmod>2018-07-16T07:52:28.424Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kekbin.com/2018/06/07/IPFS-practice-2/</loc>
-    
-    <lastmod>2018-07-16T07:50:43.942Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kekbin.com/2018/06/06/IPFS-practice-1/</loc>
-    
-    <lastmod>2018-07-16T07:50:07.104Z</lastmod>
     
   </url>
   
