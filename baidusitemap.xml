@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>https://kekbin.com/2018/06/25/simple_cm_wiki/</loc>
+    <lastmod>2018-07-16T07:37:32.430Z</lastmod>
+    <data>
+        <display>
+        <title>简单合同管理程序开发记录</title>
+        <pubTime>2018-06-24T16:00:00.000Z</pubTime>
+        
+        <tag>c-sharp</tag>
+         
+        <tag>wpf</tag>
+         
+        <tag>open-source</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://kekbin.com/2018/07/16/NAS-DPFS/</loc>
-    <lastmod>2018-07-16T07:10:59.633Z</lastmod>
+    <lastmod>2018-07-16T07:37:12.804Z</lastmod>
     <data>
         <display>
         <title>NAS + DPFS-IPFS家庭云管理方案</title>
@@ -18,7 +42,7 @@
          
            
              
-              <breadCrumb title="项目" url="https://kekbin.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -109,28 +133,6 @@
            
              
               <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kekbin.com/2018/06/25/simple_cm_wiki/</loc>
-    <lastmod>2018-06-25T08:00:34.981Z</lastmod>
-    <data>
-        <display>
-        <title>简单合同管理程序开发记录</title>
-        <pubTime>2018-06-24T16:00:00.000Z</pubTime>
-        
-        <tag>c-sharp</tag>
-         
-        <tag>wpf</tag>
-         
-         
-           
-             
-              <breadCrumb title="项目" url="https://kekbin.com/categories/%E9%A1%B9%E7%9B%AE/"/>
           
         </display>
     </data>
