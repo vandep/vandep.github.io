@@ -1,188 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
   <url>
+    <loc>https://kekbin.com/2019/07/19/android-google-location-develop/</loc>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
     <loc>https://kekbin.com/2018/05/31/blog_journey-1/</loc>
-    <lastmod>2018-12-05T08:39:49.903Z</lastmod>
-    <data>
-        <display>
-        <title>博客之旅--搭架子</title>
-        <pubTime>2018-05-31T10:32:23.000Z</pubTime>
-        
-        <tag>IPFS</tag>
-         
-        <tag>blog</tag>
-         
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kekbin.com/2018/06/07/IPFS-practice-2/</loc>
-    <lastmod>2018-07-16T08:06:13.218Z</lastmod>
-    <data>
-        <display>
-        <title>IPFS实践之功能封装</title>
-        <pubTime>2018-06-07T03:05:24.000Z</pubTime>
-        
-        <tag>IPFS</tag>
-         
-        <tag>c-sharp</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kekbin.com/2018/06/06/IPFS-practice-1/</loc>
-    <lastmod>2018-07-16T08:06:08.360Z</lastmod>
-    <data>
-        <display>
-        <title>IPFS实践之初体验</title>
-        <pubTime>2018-06-06T03:05:24.000Z</pubTime>
-        
-        <tag>IPFS</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kekbin.com/2018/06/25/simple_cm_wiki/</loc>
-    <lastmod>2018-07-16T07:55:24.603Z</lastmod>
-    <data>
-        <display>
-        <title>简单合同管理程序开发记录</title>
-        <pubTime>2018-06-24T16:00:00.000Z</pubTime>
-        
-        <tag>c-sharp</tag>
-         
-        <tag>wpf</tag>
-         
-        <tag>open-source</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
     <loc>https://kekbin.com/2018/06/26/p2p-network-1/</loc>
-    <lastmod>2018-07-16T07:54:49.318Z</lastmod>
-    <data>
-        <display>
-        <title>P2P网络由浅入深—基于局域网模型</title>
-        <pubTime>2018-06-26T08:43:53.000Z</pubTime>
-        
-        <tag>IPFS</tag>
-         
-        <tag>p2p</tag>
-         
-        <tag>libp2p</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
+    <loc>https://kekbin.com/2018/06/06/IPFS-practice-1/</loc>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
     <loc>https://kekbin.com/2018/07/16/NAS-DPFS/</loc>
-    <lastmod>2018-07-16T07:52:28.424Z</lastmod>
-    <data>
-        <display>
-        <title>NAS + DPFS-IPFS家庭云管理方案</title>
-        <pubTime>2018-07-16T07:02:03.000Z</pubTime>
-        
-        <tag>IPFS</tag>
-         
-        <tag>p2p</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
+    <loc>https://kekbin.com/2018/06/07/IPFS-practice-2/</loc>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
+    <loc>https://kekbin.com/2018/06/25/simple_cm_wiki/</loc>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
     <loc>https://kekbin.com/2018/06/01/blog-journey-2/</loc>
-    <lastmod>2018-07-16T07:49:22.039Z</lastmod>
-    <data>
-        <display>
-        <title>博客之旅-穿外衣</title>
-        <pubTime>2018-06-01T02:37:44.000Z</pubTime>
-        
-        <tag>blog</tag>
-         
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://kekbin.com/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
     <loc>https://kekbin.com/2018/06/14/javascript-study-1/</loc>
-    <lastmod>2018-07-02T08:26:25.551Z</lastmod>
-    <data>
-        <display>
-        <title>javascript学习笔记1</title>
-        <pubTime>2018-06-14T11:05:17.000Z</pubTime>
-        
-        <tag>html</tag>
-         
-        <tag>javascript</tag>
-         
-        <tag>web</tag>
-         
-         
-           
-             
-              <breadCrumb title="笔记" url="https://kekbin.com/categories/%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <lastmod>2018-07-02</lastmod>
+  </url>
 </urlset>
