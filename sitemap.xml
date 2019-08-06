@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kekbin.com/2018/06/14/javascript-study-1/</loc>
+    
+    <lastmod>2019-08-06T06:24:45.556Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kekbin.com/2019/08/06/webrtc-introduction-01/</loc>
     
     <lastmod>2019-08-06T06:20:25.022Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://kekbin.com/2018/07/16/NAS-DPFS/</loc>
     
     <lastmod>2019-07-19T05:57:21.636Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kekbin.com/2018/06/14/javascript-study-1/</loc>
-    
-    <lastmod>2019-07-19T05:56:46.993Z</lastmod>
     
   </url>
   
