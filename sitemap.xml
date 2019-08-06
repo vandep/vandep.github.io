@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kekbin.com/2018/06/14/javascript-study-1/</loc>
+    <loc>https://kekbin.com/2019/07/19/android-google-location-develop/</loc>
     
-    <lastmod>2019-08-06T06:24:45.556Z</lastmod>
+    <lastmod>2019-08-06T06:35:18.427Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kekbin.com/2019/08/06/webrtc-introduction-01/</loc>
     
-    <lastmod>2019-08-06T06:20:25.022Z</lastmod>
+    <lastmod>2019-08-06T06:35:12.498Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kekbin.com/2018/06/14/javascript-study-1/</loc>
+    
+    <lastmod>2019-08-06T06:35:00.011Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://kekbin.com/2018/06/06/IPFS-practice-1/</loc>
     
     <lastmod>2019-08-06T06:20:23.462Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kekbin.com/2019/07/19/android-google-location-develop/</loc>
-    
-    <lastmod>2019-08-06T06:20:22.006Z</lastmod>
     
   </url>
   
