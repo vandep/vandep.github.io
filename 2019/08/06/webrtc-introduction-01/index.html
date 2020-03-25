@@ -21,7 +21,7 @@
 <meta property="og:description" content="简介参考文献–官网 WebRtc通过一些简单的API来提供一种支持浏览器、移动应用之间的实时通信能力（Real-Time Communications），它具有以下特点：  免费的 开源的 12//代码地址git clone https://webrtc.googlesource.com/src  支持多平台：包括Chrome、FireFox、Opera、Android、IOS  web应用端无">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.pixabay.com/photo/2019/07/25/18/58/church-4363258_960_720.jpg">
-<meta property="og:updated_time" content="2019-08-06T06:35:12.498Z">
+<meta property="og:updated_time" content="2020-03-25T03:19:41.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebRTC--基础">
 <meta name="twitter:description" content="简介参考文献–官网 WebRtc通过一些简单的API来提供一种支持浏览器、移动应用之间的实时通信能力（Real-Time Communications），它具有以下特点：  免费的 开源的 12//代码地址git clone https://webrtc.googlesource.com/src  支持多平台：包括Chrome、FireFox、Opera、Android、IOS  web应用端无">
@@ -196,7 +196,7 @@ var _hmt = _hmt || [];
 <li>支持视频流、音频流、字节流</li>
 <li>所以常见用于音视频通话、会议、远程控制等<h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><a href="https://webrtc.org/architecture/" target="_blank" rel="noopener">参考文献–结构</a><br>官网提供的结构如图所示：</li>
 </ul>
-<p><img src="https://webrtc.org/assets/images/webrtc-public-diagram-for-website.png" alt="官方架构图"></p>
+<p><img src="./../res/webrtc/webrtc-public-diagram-for-website.png" alt="官方架构图"></p>
 <p>包含内容：</p>
 <ol>
 <li>PeerConnection：所有的browser（或者说peer）通过建立PeerConnection进行通信</li>
@@ -215,7 +215,7 @@ var _hmt = _hmt || [];
 <li>Signalling用于Peer之间SDP交换</li>
 <li>建立P2P连接</li>
 <li>本地流的抓取及发送到远端</li>
-<li>远端渲染流<br><img src="https://www.html5rocks.com/en/tutorials/webrtc/basics/jsep.png" alt="基础过程"></li>
+<li>远端渲染流<br><img src="./../res/webrtc/jsep.png" alt="基础过程"></li>
 </ol>
 <p>其中P2P连接是WebRTC工作的关键，连接的过程后面我们将逐一介绍，下面先介绍一些概念和术语：</p>
 <h4 id="SDP"><a href="#SDP" class="headerlink" title="SDP"></a>SDP</h4><p><a href="https://tools.ietf.org/html/rfc3264" target="_blank" rel="noopener">参考文献–协议RFC3264</a></p>
@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
 <p>最后，一次会话用什么配置，也不是由某一个人决定，必须所有人的意见达成一致，这样才能保证所有人都能参与会话。所以涉及到一个协商的过程了，会话发起者先提出一些建议（offer），其他人参与者再根据 offer 给出自己的选择（answer），最终意见达成一致后，才能开始会话。</p>
 <h4 id="ICE"><a href="#ICE" class="headerlink" title="ICE"></a>ICE</h4><p><a href="https://tools.ietf.org/html/rfc5245" target="_blank" rel="noopener">参考文献–协议RFC5245</a></p>
 <p><a href="https://blog.piasy.com/2017/08/30/WebRTC-P2P-part1/index.html" target="_blank" rel="noopener">参考文献–中文博客</a></p>
-<p>WebRTC使用ICE框架来保证穿透。ICE全名叫交互式连接建立（Interactive Connectivity Establishment）,一种综合性的NAT/FW穿越技术，它是一种框架，可以整合各种NAT/FW穿越技术如STUN、TURN（Traversal Using Relay NAT 中继NAT实现的穿透）。ICE会先使用STUN，尝试建立一个基于UDP的连接，如果失败了，就会去TCP（先尝试HTTP，然后尝试HTTPS），如果依旧失败ICE就会使用一个中继的TURN（Relay）服务器.<br>Webrtc的ICE穿透如图所示<br><img src="https://img-blog.csdn.net/20161117105652939" alt="Peer连接NAT穿越"></p>
+<p>WebRTC使用ICE框架来保证穿透。ICE全名叫交互式连接建立（Interactive Connectivity Establishment）,一种综合性的NAT/FW穿越技术，它是一种框架，可以整合各种NAT/FW穿越技术如STUN、TURN（Traversal Using Relay NAT 中继NAT实现的穿透）。ICE会先使用STUN，尝试建立一个基于UDP的连接，如果失败了，就会去TCP（先尝试HTTP，然后尝试HTTPS），如果依旧失败ICE就会使用一个中继的TURN（Relay）服务器.<br>Webrtc的ICE穿透如图所示<br><img src="./../res/webrtc/nat_trav.png" alt="Peer连接NAT穿越"></p>
 <h4 id="candidate"><a href="#candidate" class="headerlink" title="candidate"></a>candidate</h4><p><a href="https://blog.piasy.com/2017/08/30/WebRTC-P2P-part1/index.html" target="_blank" rel="noopener">参考文献–中文博客1</a></p>
 <p><a href="https://blog.piasy.com/2018/07/31/WebRTC-P2P-part2/index.html" target="_blank" rel="noopener">参考文献–中文博客2</a></p>
 <p><a href="https://tools.ietf.org/html/rfc5245" target="_blank" rel="noopener">参考文献–协议RFC5245</a></p>
@@ -244,7 +244,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://kekbin.com/2019/08/06/webrtc-introduction-01/" data-id="cjyzfpxm7000cxs27f3pd06v4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://kekbin.com/2019/08/06/webrtc-introduction-01/" data-id="ck86rg609000bsk27yl0ygvxk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -553,7 +553,7 @@ var _hmt = _hmt || [];
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2019 KekBin</p>
+                <p>&copy; 2020 KekBin</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>

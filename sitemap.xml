@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kekbin.com/2019/07/19/android-google-location-develop/</loc>
+    <loc>https://kekbin.com/2019/08/06/webrtc-introduction-01/</loc>
     
-    <lastmod>2019-08-06T06:35:18.427Z</lastmod>
+    <lastmod>2020-03-25T03:19:41.448Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kekbin.com/2019/08/06/webrtc-introduction-01/</loc>
+    <loc>https://kekbin.com/2018/06/25/simple_cm_wiki/</loc>
     
-    <lastmod>2019-08-06T06:35:12.498Z</lastmod>
+    <lastmod>2019-10-15T08:18:33.829Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kekbin.com/2018/05/31/blog_journey-1/</loc>
+    
+    <lastmod>2019-09-05T05:29:45.870Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kekbin.com/2018/06/14/javascript-study-1/</loc>
     
-    <lastmod>2019-08-06T06:35:00.011Z</lastmod>
+    <lastmod>2019-08-06T06:36:37.506Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kekbin.com/2019/07/19/android-google-location-develop/</loc>
+    
+    <lastmod>2019-08-06T06:36:32.448Z</lastmod>
     
   </url>
   
@@ -33,13 +47,6 @@
     <loc>https://kekbin.com/2018/06/06/IPFS-practice-1/</loc>
     
     <lastmod>2019-08-06T06:20:23.462Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kekbin.com/2018/06/25/simple_cm_wiki/</loc>
-    
-    <lastmod>2019-07-19T05:58:27.677Z</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>https://kekbin.com/2018/06/01/blog-journey-2/</loc>
     
     <lastmod>2019-07-19T05:52:29.532Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kekbin.com/2018/05/31/blog_journey-1/</loc>
-    
-    <lastmod>2019-07-19T05:50:47.546Z</lastmod>
     
   </url>
   
